@@ -1897,3 +1897,15 @@ Processing by UsersController#index as */*
 Completed 200 OK in 43ms (Views: 19.0ms | ActiveRecord: 12.7ms)
 
 
+Started GET "/users?username=julian,eric" for 127.0.0.1 at 2018-11-12 17:19:30 -0800
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"julian,eric"}
+Completed 500 Internal Server Error in 52337ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `index'
+app/controllers/users_controller.rb:8:in `index'
