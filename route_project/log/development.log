@@ -1656,3 +1656,244 @@ Processing by CommentsController#index as */*
 Completed 200 OK in 28ms (Views: 14.1ms | ActiveRecord: 8.0ms)
 
 
+Started GET "/users?favorite_food=pizza" for 127.0.0.1 at 2018-11-12 16:57:07 -0800
+Processing by UsersController#index as */*
+  Parameters: {"favorite_food"=>"pizza"}
+No template found for UsersController#index, rendering head :no_content
+Completed 204 No Content in 153ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users?favorite_food=pizza" for 127.0.0.1 at 2018-11-12 16:59:08 -0800
+Processing by UsersController#index as */*
+  Parameters: {"favorite_food"=>"pizza"}
+Completed 500 Internal Server Error in 177ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `users' for #<UsersController:0x00007fe12cb45248>
+Did you mean?  users_url):
+  
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users?favorite_food=pizza" for 127.0.0.1 at 2018-11-12 16:59:27 -0800
+Processing by UsersController#index as */*
+  Parameters: {"favorite_food"=>"pizza"}
+Completed 500 Internal Server Error in 191ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `query_string' for #<UsersController:0x00007fe12945ccb8>):
+  
+app/controllers/users_controller.rb:6:in `index'
+Started GET "/users?favorite_food=pizza" for 127.0.0.1 at 2018-11-12 16:59:37 -0800
+Processing by UsersController#index as */*
+  Parameters: {"favorite_food"=>"pizza"}
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `users' for #<UsersController:0x00007fe12d05abe8>
+Did you mean?  users_url):
+  
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users?favorite_food=pizza" for 127.0.0.1 at 2018-11-12 16:59:51 -0800
+Processing by UsersController#index as */*
+  Parameters: {"favorite_food"=>"pizza"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7
+Completed 200 OK in 60ms (Views: 11.2ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/users?username=postmansucks" for 127.0.0.1 at 2018-11-12 17:00:21 -0800
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"postmansucks"}
+No template found for UsersController#index, rendering head :no_content
+Completed 204 No Content in 149ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-11-12 17:06:18 -0800
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:13
+Completed 200 OK in 52ms (Views: 10.1ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/users?id=13" for 127.0.0.1 at 2018-11-12 17:06:31 -0800
+Processing by UsersController#index as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (57.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."#{key}" IS NULL[0m
+  ↳ app/controllers/users_controller.rb:8
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 57.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column users.#{key} does not exist
+LINE 1: SELECT "users".* FROM "users" WHERE "users"."#{key}" IS NULL
+                                            ^
+: SELECT "users".* FROM "users" WHERE "users"."#{key}" IS NULL):
+  
+app/controllers/users_controller.rb:8:in `block in index'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users?id=13" for 127.0.0.1 at 2018-11-12 17:06:46 -0800
+Processing by UsersController#index as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."key" IS NULL[0m
+  ↳ app/controllers/users_controller.rb:8
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 5.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column users.key does not exist
+LINE 1: SELECT "users".* FROM "users" WHERE "users"."key" IS NULL
+                                            ^
+: SELECT "users".* FROM "users" WHERE "users"."key" IS NULL):
+  
+app/controllers/users_controller.rb:8:in `block in index'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users?id=13" for 127.0.0.1 at 2018-11-12 17:07:13 -0800
+Processing by UsersController#index as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL[0m
+  ↳ app/controllers/users_controller.rb:8
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."controller" IS NULL[0m
+  ↳ app/controllers/users_controller.rb:8
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 4.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column users.controller does not exist
+LINE 1: SELECT "users".* FROM "users" WHERE "users"."controller" IS ...
+                                            ^
+: SELECT "users".* FROM "users" WHERE "users"."controller" IS NULL):
+  
+app/controllers/users_controller.rb:8:in `block in index'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users?id=13" for 127.0.0.1 at 2018-11-12 17:07:33 -0800
+Processing by UsersController#index as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL[0m
+  ↳ app/controllers/users_controller.rb:8
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."controller" = $1[0m  [["controller", "v"]]
+  ↳ app/controllers/users_controller.rb:8
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 9.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column users.controller does not exist
+LINE 1: SELECT "users".* FROM "users" WHERE "users"."controller" = $...
+                                            ^
+: SELECT "users".* FROM "users" WHERE "users"."controller" = $1):
+  
+app/controllers/users_controller.rb:8:in `block in index'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users?id=13" for 127.0.0.1 at 2018-11-12 17:07:54 -0800
+Processing by UsersController#index as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 13]]
+  ↳ app/controllers/users_controller.rb:8
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."controller" = $1[0m  [["controller", "users"]]
+  ↳ app/controllers/users_controller.rb:8
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 8.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column users.controller does not exist
+LINE 1: SELECT "users".* FROM "users" WHERE "users"."controller" = $...
+                                            ^
+: SELECT "users".* FROM "users" WHERE "users"."controller" = $1):
+  
+app/controllers/users_controller.rb:8:in `block in index'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users?id=13" for 127.0.0.1 at 2018-11-12 17:08:12 -0800
+Processing by UsersController#index as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."key" = $1[0m  [["key", "13"]]
+  ↳ app/controllers/users_controller.rb:8
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 5.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column users.key does not exist
+LINE 1: SELECT "users".* FROM "users" WHERE "users"."key" = $1
+                                            ^
+: SELECT "users".* FROM "users" WHERE "users"."key" = $1):
+  
+app/controllers/users_controller.rb:8:in `block in index'
+app/controllers/users_controller.rb:7:in `index'
+Started GET "/users?id=13" for 127.0.0.1 at 2018-11-12 17:08:45 -0800
+Processing by UsersController#index as */*
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 13]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."controller" = $1[0m  [["controller", "users"]]
+  ↳ app/controllers/users_controller.rb:9
+Completed 500 Internal Server Error in 204903ms (ActiveRecord: 12.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column users.controller does not exist
+LINE 1: SELECT "users".* FROM "users" WHERE "users"."controller" = $...
+                                            ^
+: SELECT "users".* FROM "users" WHERE "users"."controller" = $1):
+  
+app/controllers/users_controller.rb:9:in `block in index'
+app/controllers/users_controller.rb:8:in `index'
+Started GET "/users?username=julian" for 127.0.0.1 at 2018-11-12 17:12:21 -0800
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"julian"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1[0m  [["username", "julian"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."controller" = $1[0m  [["controller", "users"]]
+  ↳ app/controllers/users_controller.rb:9
+Completed 500 Internal Server Error in 17959ms (ActiveRecord: 3.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column users.controller does not exist
+LINE 1: SELECT "users".* FROM "users" WHERE "users"."controller" = $...
+                                            ^
+: SELECT "users".* FROM "users" WHERE "users"."controller" = $1):
+  
+app/controllers/users_controller.rb:9:in `block in index'
+app/controllers/users_controller.rb:8:in `index'
+Started GET "/users?username=julian" for 127.0.0.1 at 2018-11-12 17:14:17 -0800
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"julian"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."action" = $1[0m  [["action", "index"]]
+  ↳ app/controllers/users_controller.rb:11
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 4.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column users.action does not exist
+LINE 1: SELECT "users".* FROM "users" WHERE "users"."action" = $1
+                                            ^
+: SELECT "users".* FROM "users" WHERE "users"."action" = $1):
+  
+app/controllers/users_controller.rb:11:in `index'
+Started GET "/users?username=julian" for 127.0.0.1 at 2018-11-12 17:14:50 -0800
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"julian"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1[0m  [["username", "julian"]]
+  ↳ app/controllers/users_controller.rb:11
+Completed 200 OK in 28ms (Views: 8.0ms | ActiveRecord: 8.6ms)
+
+
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Started GET "/users?username=julian,eric" for 127.0.0.1 at 2018-11-12 17:16:48 -0800
+  [1m[35m (12.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"julian,eric"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1[0m  [["username", "julian,eric"]]
+  ↳ app/controllers/users_controller.rb:11
+Completed 200 OK in 43ms (Views: 11.2ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/users?username=julian,eric" for 127.0.0.1 at 2018-11-12 17:17:29 -0800
+Processing by UsersController#index as */*
+  Parameters: {"username"=>"julian,eric"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IN ($1, $2)[0m  [["username", "julian"], ["username", "eric"]]
+  ↳ app/controllers/users_controller.rb:12
+Completed 200 OK in 43ms (Views: 19.0ms | ActiveRecord: 12.7ms)
+
+

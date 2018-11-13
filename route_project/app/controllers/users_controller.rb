@@ -1,8 +1,19 @@
 class UsersController < ApplicationController
   
   def index
-    users = User.all
-    render json: users
+    
+    if request.query_string.present?
+      users = User.all
+      params.each do |key, v|
+        next if key == "controller" || key == "action"
+        v = v.split(',')
+        users = User.where("#{key}": v)
+      end
+      render json: users
+    else
+      users = User.all
+      render json: users
+    end
   end
   
   def create
