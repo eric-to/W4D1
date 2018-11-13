@@ -29,5 +29,6 @@ class Artwork < ApplicationRecord
     
   has_many :comments,
     foreign_key: :artwork_id,
-    class_name: "Comments"
+    class_name: "Comments",
+    dependent: :destroy
 end
